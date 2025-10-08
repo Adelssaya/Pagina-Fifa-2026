@@ -1,7 +1,6 @@
-// app/productos/page.tsx
+
 import ProductCard2026 from "../ui/product-card-2026";
 
-// Imágenes reales por categoría (libres en Unsplash)
 const PRODUCTS = [
   {
     title: "Camiseta Oficial FIFA 2026",
@@ -37,10 +36,10 @@ const PRODUCTS = [
   },
 ];
 
-export default function ProductosPage() {
+export default function ProductosPage() { 
   return (
     <section className="pb-10">
-      {/* Encabezado con contraste sobre morado */}
+      {/* Encabezado */}
       <div className="w-full bg-[#8E44AD] py-3 text-center text-white">
         <h2 className="text-2xl font-extrabold drop-shadow">Catálogo de Productos</h2>
         <p className="mx-auto mt-1 max-w-2xl text-sm text-white/90">
@@ -49,18 +48,20 @@ export default function ProductosPage() {
       </div>
 
       <div className="container">
+        {/* Grid de productos */}
         <div className="mx-auto mt-6 grid max-w-5xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {PRODUCTS.map((p) => (
             <ProductCard2026 key={p.title} {...p} />
           ))}
         </div>
 
-        <div className="mt-6 flex justify-center">
-          <button className="rounded-full bg-[#E76F51] px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
+        {/* Botón centrado */}
+        <div className="mt-28 flex w-full items-center justify-center">
+          <button className="rounded-full bg-[#E76F51] px-6 py-3 text-sm font-semibold text-white hover:opacity-100">
             Cargar Más Productos
           </button>
         </div>
       </div>
     </section>
-  );
+  )
 }
