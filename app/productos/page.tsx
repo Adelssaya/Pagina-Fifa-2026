@@ -65,3 +65,12 @@ export default function ProductosPage() {
     </section>
   )
 }
+
+
+//  Correcciones
+//  mostrar el "añadir a favoritos"
+//  Vista d IPAD (boton de carrito)
+//  boton de "cargar mas producto" en la vista de MAc
+//  agregar una imagen y dejar menos espacio en la vista de productos (MAC)
+//
+//

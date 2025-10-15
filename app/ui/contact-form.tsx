@@ -1,10 +1,18 @@
-
 "use client";
 import { FormEvent } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "./button";
 import { Input, Textarea } from "./input";
+
 export default function ContactForm(){
-  function handleSubmit(e: FormEvent<HTMLFormElement>){ e.preventDefault(); }
+  const router = useRouter();
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>){
+    e.preventDefault();
+
+    router.push("/productos");
+  }
+
   return (
     <form onSubmit={handleSubmit} className="mx-auto mt-6 w-full max-w-xl rounded-xl border border-black/5 bg-white p-6 shadow-lg">
       <h3 className="mb-4 text-center text-sm font-semibold text-[#5E5E5E]">Contáctanos para Ofertas Exclusivas</h3>
@@ -14,7 +22,8 @@ export default function ContactForm(){
       <Input className="mb-3" type="email" placeholder="tucorreo@email.com" />
       <label className="block text-xs">Mensaje</label>
       <Textarea className="mb-4" rows={3} placeholder="Cuéntanos qué productos te interesan..." />
-      <Button className="w-full bg-[#E76F51] hover:opacity-90">Enviar Mensaje</Button>
+      {/* type="submit" para que active onSubmit */}
+      <Button type="submit" className="w-full bg-[#E76F51] hover:opacity-90">Enviar Mensaje</Button>
     </form>
   );
 }
